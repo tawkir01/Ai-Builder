@@ -1,0 +1,231 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 1.5rem;
+  min-height: 100vh;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.header {
+  width: 100%;
+  margin-bottom: 3rem;
+  text-align: left;
+}
+
+.headerTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.headerTop h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.badge {
+  padding: 0.4rem 1rem;
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid var(--primary);
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.progressContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.progressBar {
+  width: 100%;
+  height: 8px;
+  background: var(--bg-elevated);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--gradient-primary);
+  transition: width 0.4s ease;
+  box-shadow: 0 0 15px var(--primary-glow);
+}
+
+.progressContainer p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.questionCard {
+  width: 100%;
+  padding: 3rem;
+  margin-bottom: 2rem;
+}
+
+.questionText {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin-bottom: 2.5rem;
+  color: var(--text-main);
+}
+
+.optionsGrid {
+  display: grid;
+  gap: 1rem;
+}
+
+.optionBtn {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.25rem 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  width: 100%;
+  font-family: inherit;
+  color: var(--text-main);
+}
+
+.optionBtn:hover {
+  background: rgba(139, 92, 246, 0.08);
+  border-color: var(--primary);
+  transform: translateX(4px);
+}
+
+.optionLetter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--bg-elevated);
+  border-radius: 6px;
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.optionContent {
+  flex-grow: 1;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.optionArrow {
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  color: var(--primary);
+}
+
+.optionBtn:hover .optionArrow {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+/* States */
+.loadingState {
+  padding: 4rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.pulseIcon {
+  color: var(--primary);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.7; }
+}
+
+.errorCard {
+  padding: 3rem;
+  text-align: center;
+}
+
+.errorCard h3 {
+  color: var(--danger);
+  margin-bottom: 1rem;
+}
+
+.resultCard {
+  width: 100%;
+  padding: 4rem;
+  text-align: center;
+}
+
+.iconContainer {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.scoreDisplay {
+  margin: 2rem 0;
+}
+
+.scoreNumber {
+  font-size: 4rem;
+  font-weight: 900;
+  color: var(--primary);
+}
+
+.totalNumber {
+  font-size: 1.5rem;
+  color: var(--text-muted);
+}
+
+.feedback {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin-bottom: 3rem;
+  line-height: 1.6;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 2rem 1rem;
+  }
+  .headerTop {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .questionCard {
+    padding: 1.5rem;
+  }
+  .questionText {
+    font-size: 1.25rem;
+  }
+  .actionButtons {
+    flex-direction: column;
+  }
+}
